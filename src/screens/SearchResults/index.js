@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, Pressable} from 'react-native';
 import HomeMap from '../../components/HomeMap';
 import UberTypes from '../../components/UberTypes';
+import RouteMap from '../../components/RouteMap';
 
 const SearchResults = () => {
   const confirm = () => {
@@ -11,7 +12,7 @@ const SearchResults = () => {
   return (
     <View style={{flex: 1}}>
       <View style={{flex: 1}}>
-        <HomeMap />
+        <RouteMap />
 
         <UberTypes />
       </View>
