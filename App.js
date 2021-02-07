@@ -11,13 +11,14 @@ import {StatusBar} from 'react-native';
 
 import HomeScreen from './src/screens/HomeScreen';
 import SearchResults from './src/screens/SearchResults';
+import HomeMap from './src/components/HomeMap';
+import DestinationSearch from './src/screens/DestinationSearch';
 
 const App: () => React$Node = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
-
-      <SearchResults />
+      <DestinationSearch />
     </>
   );
 };

@@ -1,14 +1,16 @@
 import React, {useState, useEffect} from 'react';
 import {View, SafeAreaView} from 'react-native';
-
 import styles from './styles';
 import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
+import Config from 'react-native-config';
 
 const DestinationSearch = () => {
   // State variables to hold the autocomplete text values
 
   const [originPlace, setFromPlace] = useState('');
   const [destinationPlace, setDestinationPlace] = useState('');
+
+  const APIkey = Config.GOOGLE_MAPS_API_KEY;
 
   // Navigates to results page when both input fields are filled.
   useEffect(() => {
@@ -29,7 +31,7 @@ const DestinationSearch = () => {
             textInput: styles.placesAutocomplete,
           }}
           query={{
-            key: 'AIzaSyCnCc5xmsZ-vu_M9C7Llg1vOifxgRzYuO8',
+            key: APIkey,
             language: 'en',
           }}
         />
@@ -43,7 +45,7 @@ const DestinationSearch = () => {
             textInput: styles.placesAutocomplete,
           }}
           query={{
-            key: 'AIzaSyCnCc5xmsZ-vu_M9C7Llg1vOifxgRzYuO8',
+            key: APIkey,
             language: 'en',
           }}
         />

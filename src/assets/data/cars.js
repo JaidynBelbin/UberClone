@@ -2,7 +2,7 @@ export default [
   {
     id: '0',
     type: 'UberX',
-    latitude: 28.450627, 
+    latitude: 28.450627,
     longitude: -16.263045,
   },
   {
@@ -17,10 +17,10 @@ export default [
     latitude: 28.456208,
     longitude: -16.259098,
   },
-  { 
+  {
     id: '3',
     type: 'Comfort',
     latitude: 28.454812,
-    longitude:-16.258658,
+    longitude: -16.258658,
   },
 ];

@@ -36,13 +36,6 @@ const HomeMap = () => {
           />
         </Marker>
       ))}
-
-      <Marker coordinate={{latitude: 37.78825, longitude: -122.4324}}>
-        <Image
-          style={{width: 50, height: 50, resizeMode: 'contain'}}
-          source={require('../../assets/images/top-UberX.png')}
-        />
-      </Marker>
     </MapView>
   );
 };
