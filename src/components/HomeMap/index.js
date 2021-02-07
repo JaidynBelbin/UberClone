@@ -31,7 +31,17 @@ const HomeMap = () => {
           coordinate={{latitude: car.latitude, longitude: car.longitude}}
           key={car.id}>
           <Image
-            style={{width: 60, height: 60, resizeMode: 'contain'}}
+            style={{
+              width: 60,
+              height: 60,
+              resizeMode: 'contain',
+              transform: [
+                {
+                  /* Will eventually get heading from the GPS directions */
+                  rotate: `${car.heading}deg`,
+                },
+              ],
+            }}
             source={getImage(car.type)}
           />
         </Marker>
