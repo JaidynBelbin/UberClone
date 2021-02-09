@@ -3,11 +3,12 @@ import {View, SafeAreaView} from 'react-native';
 import styles from './styles';
 import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
 import Config from 'react-native-config';
+import PlaceRow from './PlaceRow';
 
 const DestinationSearch = () => {
   // State variables to hold the autocomplete text values
 
-  const [originPlace, setFromPlace] = useState('');
+  const [originPlace, setOriginPlace] = useState('');
   const [destinationPlace, setDestinationPlace] = useState('');
 
   const APIkey = Config.GOOGLE_MAPS_API_KEY;
@@ -25,15 +26,23 @@ const DestinationSearch = () => {
         <GooglePlacesAutocomplete
           placeholder="Where from?"
           onPress={(data, details = null) => {
-            setFromPlace({data, details});
+            setOriginPlace({data, details});
           }}
+          enablePoweredByContainer={false}
           styles={{
-            textInput: styles.placesAutocomplete,
+            textInput: styles.autocompleteInput,
+            container: {
+              ...styles.autocompleteContainer,
+              top: 10,
+            },
+            listView: styles.topListView,
           }}
+          fetchDetails
           query={{
             key: APIkey,
             language: 'en',
           }}
+          renderRow={(data) => <PlaceRow data={data} />}
         />
 
         <GooglePlacesAutocomplete
@@ -41,14 +50,25 @@ const DestinationSearch = () => {
           onPress={(data, details = null) => {
             setDestinationPlace({data, details});
           }}
+          enablePoweredByContainer={false}
           styles={{
-            textInput: styles.placesAutocomplete,
+            textInput: styles.autocompleteInput,
+            container: {
+              ...styles.autocompleteContainer,
+              top: 70,
+            },
           }}
+          fetchDetails
           query={{
             key: APIkey,
             language: 'en',
           }}
+          renderRow={(data) => <PlaceRow data={data} />}
         />
+
+        <View style={styles.circle} />
+        <View style={styles.line} />
+        <View style={styles.square} />
       </View>
     </SafeAreaView>
   );
