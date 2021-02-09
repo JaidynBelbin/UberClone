@@ -9,10 +9,10 @@ const styles = StyleSheet.create({
     padding: 15,
     backgroundColor: '#eee',
     marginVertical: 5,
+    color: '#1f60f8',
   },
   autocompleteContainer: {
     position: 'absolute',
-    top: 10,
     left: 10,
     right: 10,
     marginLeft: 20,
@@ -29,7 +29,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#a2a2a2',
     padding: 5,
     borderRadius: 50,
-    marginRight: 15,
+    marginRight: 10,
+  },
+  iconHome: {
+    backgroundColor: '#478fe7',
+  },
+  iconWork: {
+    backgroundColor: '#d97a2e',
   },
   circle: {
     width: 5,

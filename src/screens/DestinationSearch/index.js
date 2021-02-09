@@ -11,6 +11,16 @@ const DestinationSearch = () => {
   const [originPlace, setOriginPlace] = useState('');
   const [destinationPlace, setDestinationPlace] = useState('');
 
+  const homePlace = {
+    description: 'Home',
+    geometry: {location: {lat: -32.08163, lng: 115.94994}},
+  };
+
+  const workPlace = {
+    description: 'Work',
+    geometry: {location: {lat: -32.11159, lng: 115.93554}},
+  };
+
   const APIkey = Config.GOOGLE_MAPS_API_KEY;
 
   // Navigates to results page when both input fields are filled.
@@ -29,6 +39,9 @@ const DestinationSearch = () => {
             setOriginPlace({data, details});
           }}
           enablePoweredByContainer={false}
+          currentLocation={true}
+          currentLocationLabel="Current location"
+          predefinedPlaces={[homePlace, workPlace]}
           styles={{
             textInput: styles.autocompleteInput,
             container: {
@@ -52,7 +65,10 @@ const DestinationSearch = () => {
           }}
           enablePoweredByContainer={false}
           styles={{
-            textInput: styles.autocompleteInput,
+            textInput: {
+              ...styles.autocompleteInput,
+              color: 'black',
+            },
             container: {
               ...styles.autocompleteContainer,
               top: 70,
