@@ -37,8 +37,6 @@ const PlaceRow = ({data}) => {
       <Text>{data.description || data.vicinity}</Text>
     </View>
   );
-
-  //render(data);
 };
 
 export default PlaceRow;
