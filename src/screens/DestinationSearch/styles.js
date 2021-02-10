@@ -4,6 +4,7 @@ const styles = StyleSheet.create({
   container: {
     padding: 10,
     height: '100%',
+    backgroundColor: '#fff',
   },
   autocompleteInput: {
     padding: 15,

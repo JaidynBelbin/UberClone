@@ -4,10 +4,12 @@ import styles from './styles';
 import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
 import Config from 'react-native-config';
 import PlaceRow from './PlaceRow';
+import {useNavigation} from '@react-navigation/native';
 
 const DestinationSearch = () => {
-  // State variables to hold the autocomplete text values
+  const navigation = useNavigation();
 
+  // State variables to hold the autocomplete text values
   const [originPlace, setOriginPlace] = useState('');
   const [destinationPlace, setDestinationPlace] = useState('');
 
@@ -21,12 +23,16 @@ const DestinationSearch = () => {
     geometry: {location: {lat: -32.11159, lng: 115.93554}},
   };
 
+  // Fetching the API key from .env
   const APIkey = Config.GOOGLE_MAPS_API_KEY;
 
   // Navigates to results page when both input fields are filled.
   useEffect(() => {
     if (originPlace && destinationPlace) {
-      console.warn('Redirect to results page');
+      navigation.navigate('SearchResults', {
+        originPlace,
+        destinationPlace,
+      });
     }
   }, [originPlace, destinationPlace]);
 
