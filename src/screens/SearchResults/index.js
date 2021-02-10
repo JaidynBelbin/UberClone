@@ -1,13 +1,23 @@
 import React from 'react';
 import {View, Text, Pressable} from 'react-native';
+import {useRoute} from '@react-navigation/native';
 import UberTypes from '../../components/UberTypes';
 import RouteMap from '../../components/RouteMap';
+import styles from './styles';
 
 const SearchResults = () => {
   const confirm = () => {
     console.warn('Confirmed');
   };
 
+  const route = useRoute();
+
+  if (route.params) {
+    console.warn('Data received!');
+
+    // Do something with these two locations: show on map, draw route between them
+    // maybe find time?
+  }
   return (
     <View style={{flex: 1}}>
       <View style={{flex: 1}}>
@@ -15,18 +25,7 @@ const SearchResults = () => {
         <UberTypes />
       </View>
 
-      <Pressable
-        onPress={confirm}
-        style={{
-          backgroundColor: 'black',
-          height: 50,
-          padding: 10,
-          margin: 10,
-          borderRadius: 25,
-          marginBottom: 35,
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
+      <Pressable onPress={confirm} style={styles.confirmButton}>
         <Text style={{color: 'white', fontWeight: 'bold'}}>Confirm Uber</Text>
       </Pressable>
     </View>
