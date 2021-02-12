@@ -70,6 +70,7 @@ const DestinationSearch = () => {
             setDestinationPlace({data, details});
           }}
           enablePoweredByContainer={false}
+          predefinedPlaces={[homePlace, workPlace]}
           styles={{
             textInput: {
               ...styles.autocompleteInput,

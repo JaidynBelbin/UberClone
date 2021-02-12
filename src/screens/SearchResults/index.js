@@ -12,16 +12,12 @@ const SearchResults = () => {
 
   const route = useRoute();
 
-  if (route.params) {
-    console.warn('Data received!');
+  const {originPlace, destinationPlace} = route.params;
 
-    // Do something with these two locations: show on map, draw route between them
-    // maybe find time?
-  }
   return (
     <View style={{flex: 1}}>
       <View style={{flex: 1}}>
-        <RouteMap />
+        <RouteMap origin={originPlace} destination={destinationPlace} />
         <UberTypes />
       </View>
 

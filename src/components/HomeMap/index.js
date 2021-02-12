@@ -22,9 +22,9 @@ const HomeMap = () => {
       provider={PROVIDER_GOOGLE}
       showsUserLocation={true}
       initialRegion={{
-        latitude: 28.450627,
-        longitude: -16.263045,
-        latitudeDelta: 0.0222,
+        latitude: -32.08163,
+        longitude: 115.94994,
+        latitudeDelta: 0.0121,
         longitudeDelta: 0.0121,
       }}>
       {cars.map((car) => (
